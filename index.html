@@ -218,6 +218,42 @@
         });
     </script>
 
-</body>
-
+</body>     
+// PONER CHAT DE AI
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+/*
+	createChat({
+		webhookUrl: 'https://n8n.quick.com.co/webhook/1dc045b6-7ebd-4624-8165-35dd9ed4f920/chat'
+	});
+*/
+    createChat({
+	webhookUrl: 'https://n8n.quick.com.co/webhook/40df4aff-50a6-4354-8d46-e95f9251eea5/chat ',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'es',
+	initialMessages: [
+		'Hola Que tal! 👋',
+		'Mi nombre es Felix Cruz. Tester QA Manual-Automation'
+	],
+	i18n: {
+		es: {
+			title: 'Hola, Bienvenidos a mi chatbot! 👋',
+			subtitle: "Preguntame lo que necesites saber de mi Curriculum 24/7.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'Type your question..',
+		},
+	},
+});
+</script>
 </html>
